@@ -24,6 +24,8 @@ To get started with this project, follow these steps:
 - Configure the pipeline script to execute the Maven commands for building and running the tests.
 - Example Pipeline script:
   ```groovy
+
+  
  pipeline {
     agent any
 
@@ -37,8 +39,7 @@ To get started with this project, follow these steps:
                 echo 'Checking out the repository...'
                 checkout([$class: 'GitSCM',
                           branches: [[name: 'dockerization']],
-                          userRemoteConfigs: [[url: 'https://github.com/tamim61qups/Web_Test_Automation.git',
-                                               credentialsId: '2b8819c6-18c6-4e1d-8f34-ea45816260be']]])
+                           userRemoteConfigs: [[url: 'https://github.com/Jubear-Jabber-Jetu/Docker.git', credentialsId: 'github']]
             }
         }
 
