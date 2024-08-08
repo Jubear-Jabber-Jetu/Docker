@@ -33,4 +33,4 @@ COPY . .
 RUN rm -rf target
 
 # Clean and run the tests
-CMD ["mvn", "clean", "test"]
+CMD ["sh", "-c", "rm -rf target && mvn clean test"]
