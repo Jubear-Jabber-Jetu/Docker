@@ -1,4 +1,3 @@
-@@ -0,0 +1,35 @@
 # Use an official Maven image as a parent image
 FROM maven:3.8.4-openjdk-11
 
