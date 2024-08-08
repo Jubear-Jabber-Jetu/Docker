@@ -29,7 +29,8 @@ RUN mvn dependency:resolve
 # Copy the rest of the application
 COPY . .
 
+# Ensure the target directory is cleaned before running tests
+RUN rm -rf target
+
 # Clean and run the tests
 CMD ["mvn", "clean", "test"]
-
-
