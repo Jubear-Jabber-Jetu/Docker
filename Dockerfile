@@ -1,3 +1,4 @@
+@@ -0,0 +1,35 @@
 # Use an official Maven image as a parent image
 FROM maven:3.8.4-openjdk-11
 
@@ -29,14 +30,5 @@ RUN mvn dependency:resolve
 # Copy the rest of the application
 COPY . .
 
-# Ensure the target directory is cleaned before running tests
-RUN rm -rf target
-
-# Copy the test runner script into the container
-COPY run-tests.sh /usr/src/app/
-
-# Make the script executable
-RUN chmod +x /usr/src/app/run-tests.sh
-
-# Use the script as the entry point
-CMD ["/usr/src/app/run-tests.sh"]
+# Clean and run the tests
+CMD ["mvn", "clean", "test"]
